@@ -1,0 +1,36 @@
+#header{
+    background-color: yellowgreen;
+    display:flex;
+    justify-content: space-between;
+    #codial{
+        color:brown;
+        margin-top: 20px;
+        margin-left: 10px;
+        font-size: 20px;
+        font-weight: 700;
+        text-decoration: none;
+       
+    }
+    #codial:hover{
+        color:blueviolet;
+    }
+    ul{  margin-top: 0px;
+        li{
+
+            background-color: whitesmoke;
+            border-radius: 5px;
+            padding:4px 4px 4px 4px;
+            font-size: 20px;
+            list-style: none;
+            display: inline-block;
+            margin: 20px;
+            a{
+                text-decoration: none;
+            }
+            a:hover {
+                color: hotpink;
+            }
+        }
+    }
+    
+}
