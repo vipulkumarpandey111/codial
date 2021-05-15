@@ -1,6 +1,6 @@
  const Post=require('../models/post');
  const User = require('../models/user');
-
+//trying to commit
  /*module.exports.home = function(req,res){
    ->commented inside comment
     //console.log(req.cookies);
