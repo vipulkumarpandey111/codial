@@ -12,7 +12,7 @@ const passportLocal=require('./config/passport-local-strategy');
 const passportJWT = require('./config/passport-jwt-strategy');
 const passportGoogle = require('./config/passport-google-oauth2-strategy');
 //to continue sign in session even after restarting server
-//const MongoStore = require('connect-mongo')(session);
+const MongoStore = require('connect-mongodb-session')(session);
 const sassMiddleware = require('node-sass-middleware');
 const flash=require('connect-flash');
 const custoMware = require('./config/middleware');
@@ -51,7 +51,7 @@ app.use(session({
     resave:false,
     cookie:{
         maxAge:(1000*60*100)
-    }/*,
+    },
     store:new MongoStore(
         //to keep signed in even on restarting the server
        {
@@ -62,7 +62,7 @@ app.use(session({
            console.log(err||'connect-mongodb setup ok');
        }
 
-    )*/
+    )
 }));
 
 app.use(passport.initialize());
