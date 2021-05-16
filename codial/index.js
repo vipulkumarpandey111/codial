@@ -38,7 +38,7 @@ app.set('layout extractStyles',true);
 app.set('layout extractScripts',true);
 //use express router which by default fetches index
 
-//set up view engine
+//set up view engine and views folder respectively
 app.set('view engine','ejs'); 
 app.set('views','./views');
 
