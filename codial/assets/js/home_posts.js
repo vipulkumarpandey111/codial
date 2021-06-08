@@ -72,7 +72,7 @@
             e.preventDefault();
             $.ajax({
                 type:'get',
-                url:$(deleteLink).prop('href'),
+                url:$(deleteLink).prop('href'),//to get link associated with delete link
                 success:function(data){
                     $(`#post-${data.data.post_id}`).remove();
                 },error:function(error){

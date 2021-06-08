@@ -1,4 +1,4 @@
-const Comment = require('../models/comment');
+ const Comment = require('../models/comment');
 const Post=require('../models/post');
 const commentsMailer = require('../mailers/comments_mailer');
 const Like = require('../models/like');

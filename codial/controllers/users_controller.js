@@ -56,7 +56,7 @@ module.exports.profile = function(req,res){
                     if(user.avatar){
                         fs.unlinkSync(path.join(__dirname,'..',user.avatar));
                     }
-                    //saving the path of teh uploaded file into the avatar field in the user
+                    //saving the path of the uploaded file into the avatar field in the user
                     user.avatar = User.avatarPath + '/' + req.file.filename;
                 }
                 user.save();
@@ -120,7 +120,7 @@ module.exports.profile = function(req,res){
   //without using passport for authentication
   /* User.findOne({email:req.body.email},function(err,user){
        if(err){
-           console.log('error in finding user while signing in');
+           console.log('error in finding user while signing in'); 
            return
        }
         //handle user found

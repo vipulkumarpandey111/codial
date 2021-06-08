@@ -35,8 +35,9 @@ let storage = multer.diskStorage({
     }
 });
 
-//stactic functions
-userSchema.statics.uploadedAvatar = multer({storage: storage}).single('avatar');
+//stactic functions to make everything publicly available
+userSchema.statics.uploadedAvatar = multer({storage: storage}).single('avatar');//.single to upload just one file at a time
+
 userSchema.statics.avatarPath = AVATAR_PATH;
 
 
