@@ -7,6 +7,7 @@ module.exports.toggleLike = async function(req,res){
     try{
         //likes/toggle/?id=abcdef&type=Post
         let likeable;
+        //to check if already liked by this user or not
         let deleted = false;
 
 
@@ -18,7 +19,7 @@ module.exports.toggleLike = async function(req,res){
         }
 
 
-        //check if alike already exists
+        //check if a like already exists
         let existingLike = await Like.findOne({
             likeable:req.query.id,
             onModel:req.query.type,
@@ -30,7 +31,7 @@ module.exports.toggleLike = async function(req,res){
             likeable.likes.pull(existingLike._id);
             likeable.save();
             existingLike.remove();
-            deleted:true;
+            deleted=true;
         }else{
             //else make a new like
             let newLike = await Like.create({

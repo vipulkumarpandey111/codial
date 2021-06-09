@@ -2,10 +2,10 @@
 class ToggleLike{
     constructor(toggleElement){
         this.toggler = toggleElement;
-        this.ToggleLike();
+        this.toggleLike();
     }
 
-    ToggleLike(){
+    toggleLike(){
         $(this.toggler).click(function(e){
             e.preventDefault();
             let self=this;
@@ -16,16 +16,16 @@ class ToggleLike{
                 url:$(self).attr('href'),
             })
             .done(function(data){
-                let LikesCount = parseInt($(self).attr('data-likes'));
-                console.log(LikesCount);
+                let likesCount = parseInt($(self).attr('data-likes'));
+                console.log(likesCount);
                 if(data.data.deleted==true){
-                    LikesCount-=1;
+                    likesCount-=1;
                 }else{
-                    LikesCount+=1;
+                    likesCount+=1;
                 }
 
-                $(self).attr('data-likes',LikesCount);
-                $(self).html('${likesCount}Likes');
+                $(self).attr('data-likes',likesCount);
+                $(self).html(`${likesCount}Likes`);
             })
             .fail(function(errData){
                 console.log('error in completing the request');
