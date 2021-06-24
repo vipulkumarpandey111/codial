@@ -1,8 +1,8 @@
-<li>
+<li style="list-style:disc ">
     <p>
         <% if(locals.user && locals.user.id==comment.user.id){ %>
             <small>
-               <a href = "/comments/destroy/<%= comment.id %>">X</a>
+               <a href = "/comments/destroy/<%= comment.id %>"><button style="background-color: rgb(236, 119, 111); margin:5px; border-radius: 5px;">Delete</button></a>
             </small>
          <% } %> 
         <%= comment.content %>
@@ -11,15 +11,17 @@
             <%= comment.user.name %>
         </small>
          <!--display the likes of this comment,if the user id logged in,then show the link to toggle likes,else just show the count-->
-    <br>
+    
+    <button style="background-color: rgb(219, 223, 210); margin:5px;  border-radius: 5px;">
     <small>
         <% if(locals.user){ %>
-            <a class="toggle-like-button" data-likes="<%= comment.likes.length %>" href="/likes/toggle/?id=<%=comment._id%>&type=Comment">
+            <a style="color:rgb(255, 0, 43); text-decoration: none;" class="toggle-like-button" data-likes="<%= comment.likes.length %>" href="/likes/toggle/?id=<%=comment._id%>&type=Comment">
                 <%= comment.likes.length %> Likes
             </a>
         <%}else{%>
                 <%= comment.likes.length %> Likes
         <%}%>
     </small>
+    </button>
     </p>
     </li>

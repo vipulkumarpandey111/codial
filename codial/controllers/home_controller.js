@@ -54,7 +54,7 @@ try{
     }).populate('likes'); 
     let users=await User.find({});
     return res.render('home',{
-        title:"Codial | Home",
+        title:"Webcon | Home",
         posts:posts,
         all_users:users
     });

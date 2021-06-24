@@ -1,8 +1,22 @@
+h1{
+    color:blueviolet;
+    font-family:cursive;
+  }
 #home-container{
     display:flex;
     #feed-posts{
         width:70%;
         padding:10px;
+        h4{
+            color:blueviolet;
+            font-family:cursive;
+        }
+        // #posts-list-container{
+            
+        //     ul{
+        //         border:2px solid black;
+        //     }
+        // }
     }
     #user-friends{
         width: 30%;

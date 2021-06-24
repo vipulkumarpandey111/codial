@@ -1,8 +1,15 @@
+h1 {
+  color: blueviolet;
+  font-family: cursive; }
+
 #home-container {
   display: flex; }
   #home-container #feed-posts {
     width: 70%;
     padding: 10px; }
+    #home-container #feed-posts h4 {
+      color: blueviolet;
+      font-family: cursive; }
   #home-container #user-friends {
     width: 30%;
     padding: 10px;

@@ -1,35 +1,39 @@
-<li id="post-<%= post._id %>">
+<link rel="stylesheet" href="/css/post_styles.css">
+
+<div>
+<li id="post-<%= post._id %>" class="posts">
     <p>
+       
+        <h3 style=" font-family: cursive; color: rgb(95, 121, 53);"><%= post.content %></h3>
         <% if(locals.user && locals.user.id==post.user.id){ %>
-        <small>
-           <a class="delete-post-button" href = "/posts/destroy/<%= post.id %>">X</a>
-        </small>
+            <small>
+               <a class="delete-post-button" href = "/posts/destroy/<%= post.id %>"><button style="background-color: rgb(236, 119, 111); margin:5px; border-radius: 5px;">Delete</button></a>
+            </small>
         <% } %> 
-        <%= post.content %>
-    <br>
-    <small>
+    <small style="color:brown">~
         <%= post.user.name %>
     </small>
 
     <!--display the likes of this post,if the user id logged in,then show the link to toggle likes,else just show the count-->
     <br>
+    <button style="background-color: rgb(219, 223, 210); margin:5px;  border-radius: 5px;">
     <small>
         <% if(locals.user){ %>
-            <a class="toggle-like-button" data-likes="<%= post.likes.length %>" href="/likes/toggle/?id=<%=post._id%>&type=Post">
+            <a style="color:rgb(255, 0, 43); text-decoration: none;" class="toggle-like-button" data-likes="<%= post.likes.length %>" href="/likes/toggle/?id=<%=post._id%>&type=Post">
                 <%= post.likes.length %> Likes
             </a>
         <%}else{%>
-                <%= post.likes.length %> Likes
+            <%= post.likes.length %> Likes
         <%}%>
     </small>
-
+    </button>
     </p>
     <div class="post-comments">
         <% if (locals.user){ %>
             <form action="/comments/create" method="POST">
-                <input type="text" name="content" placeholder="Type here to add comment...">
+                <input style="border-radius: 10px;" type="text" name="content" placeholder="Type here to add comment...">
                 <input type="hidden" name="post" value="<%= post._id %>">
-                <input type="submit" value="Add Comment">
+                <input type="submit" value="Add Comment" style="border-radius: 5px; color:green ">
             </form>
         <% } %>
         <div class="post-comments-list">
@@ -42,3 +46,4 @@
         </div>
     </div>
     </li>
+</div>
